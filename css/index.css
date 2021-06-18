@@ -1,0 +1,82 @@
+:root {
+  --bg: #0c0c0f;
+  --h1: #fff;
+  --yellow: #fdfd96;
+}
+
+body {
+  background-color: var(--bg);
+}
+.mansion {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+}
+
+.mansion > svg {
+  height: 100%;
+  width: 100%;
+  /* transform: translateY(-80px); */
+}
+
+.mansion h1 {
+  padding-top: 1rem;
+  color: var(--h1);
+  margin: 0 auto;
+  text-align: center;
+}
+
+#room1 {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+.parent1 {
+  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+  margin-top: 5%;
+  vertical-align: middle;
+  background-color: white;
+}
+
+#liveb,
+#liveleft,
+#liveright {
+  cursor: pointer;
+}
+
+.closebutton {
+  background-color: transparent;
+  color: var(--h1);
+  border: none;
+  right: 0;
+  top: 0;
+  position: fixed;
+  font-size: 40px;
+}
+
+/* blink animation */
+
+@keyframes blink {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--yellow);
+  }
+}
+
+.blink {
+  animation: blink 0.5s infinite alternate;
+}
+
+.blink2 {
+  animation: blink 0.5s infinite alternate;
+}
