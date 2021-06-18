@@ -57,7 +57,8 @@ body {
 
 #liveb,
 #liveleft,
-#liveright {
+#liveright,
+#liveup {
   cursor: pointer;
 }
 
