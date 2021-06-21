@@ -213,3 +213,15 @@ function update(comparison) {
     document.getElementById("reportcontent").appendChild(para5);
   }
 }
+
+// modal functions
+
+//prototype
+function modalvisible() {
+  var x = document.getElementById("modal1");
+  if (x.style.display == "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
