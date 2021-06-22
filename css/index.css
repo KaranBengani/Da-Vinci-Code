@@ -40,7 +40,8 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   left: 0;
   top: 0;
-  position: fixed;
+  position: absolute;
+  z-index: 2;
 }
 #liveb,
 #liveleft,
@@ -149,6 +150,7 @@ body {
   vertical-align: middle;
   background-color: white;
   border-radius: 12px;
+  /* overflow: scroll; */
 }
 
 .closebuttonm {
@@ -161,4 +163,62 @@ body {
   position: fixed;
   font-size: 40px;
   cursor: pointer;
+}
+
+#livingroomfin {
+  position: absolute;
+  bottom: 160px;
+  left: 660px;
+}
+
+/* trial css */
+
+h4 {
+  margin: 2rem 0rem;
+}
+.panel {
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 0.2rem;
+  background-color: #f5f5f5;
+  color: #323b40;
+}
+.panel.panel-blue {
+  background-color: #e0f5ff;
+  color: #00a5fa;
+}
+.panel.panel-big-height {
+  min-height: 150px;
+}
+.item {
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+.item.item-blue {
+  background-color: #b9e5fe;
+  color: #00a5fa;
+}
+.item.item-green {
+  background-color: #b7e0dc;
+  color: #019888;
+}
+.item.item-lime {
+  background-color: #c7e8c8;
+  color: #42b045;
+}
+.item.item-yellow {
+  background-color: #ffeeba;
+  color: #ff9901;
+}
+.item.item-pink {
+  background-color: #fabad0;
+  color: #ef075f;
+}
+.item.item-red {
+  background-color: #fec9c6;
+  color: #fd3d08;
+}
+.item.item-big-width {
+  min-width: 380px;
 }
