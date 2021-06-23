@@ -107,7 +107,7 @@ function room5colour() {
 // hide functions
 
 // hide to hide living room
-function hide(livingthis) {
+function hide() {
   var rem = document.getElementsByClassName("living");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
@@ -117,7 +117,8 @@ function hide(livingthis) {
   setTimeout(() => {
     room2colour();
   }, 1000);
-  var update1 = livingthis.id;
+
+  var update1 = "livingroomfin";
   update(update1);
   visible1();
 }
@@ -184,7 +185,7 @@ function hide5(kitchenthis) {
 
 // Report update functions
 
-// function call after living room
+// function call after each room
 function update(comparison) {
   if (comparison == "livingroomfin") {
     const para1 = document.createElement("p");
@@ -214,14 +215,25 @@ function update(comparison) {
   }
 }
 
-// modal functions
+//temp auth
+// retive data from the database for the password
 
-//prototype
-function modalvisible() {
-  var x = document.getElementById("modal1");
-  if (x.style.display == "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+//getting forms
+const form1 = document.getElementById("Form1");
+form1.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = form1["password1"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    console.log(dt);
+    if (pass1 == dt.Room1) {
+      alert("success");
+      hide();
+    } else alert("nope");
+  };
+});
