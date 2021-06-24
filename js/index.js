@@ -75,6 +75,7 @@ function room2colour() {
     add[i].style.cursor = "pointer";
     add[i].addEventListener("click", visible2);
   }
+  auth2();
 }
 //studyroom color
 function room3colour() {
@@ -84,6 +85,7 @@ function room3colour() {
     add[i].style.cursor = "pointer";
     add[i].addEventListener("click", visible3);
   }
+  auth3();
 }
 //storeroom color
 function room4colour() {
@@ -93,6 +95,7 @@ function room4colour() {
     add[i].style.cursor = "pointer";
     add[i].addEventListener("click", visible4);
   }
+  auth4();
 }
 //kitchen room color
 function room5colour() {
@@ -123,7 +126,7 @@ function hide() {
   visible1();
 }
 // hide to hide bed room
-function hide2(bedthis) {
+function hide2() {
   var rem = document.getElementsByClassName("bedroom");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
@@ -133,13 +136,13 @@ function hide2(bedthis) {
   setTimeout(() => {
     room3colour();
   }, 1000);
-  var update2 = bedthis.id;
+  var update2 = "bedroomfin";
   update(update2);
   visible2();
 }
 
 // hide to hide study room
-function hide3(studythis) {
+function hide3() {
   var rem = document.getElementsByClassName("studyroom");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
@@ -149,13 +152,13 @@ function hide3(studythis) {
   setTimeout(() => {
     room4colour();
   }, 1000);
-  var update3 = studythis.id;
+  var update3 = "studyroomfin";
   update(update3);
   visible3();
 }
 
 // hide to hide store room
-function hide4(storethis) {
+function hide4() {
   var rem = document.getElementsByClassName("storeroom");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
@@ -165,7 +168,7 @@ function hide4(storethis) {
   setTimeout(() => {
     room5colour();
   }, 1000);
-  var update4 = storethis.id;
+  var update4 = "storeroomfin";
   update(update4);
   visible4();
 }
@@ -188,37 +191,82 @@ function hide5(kitchenthis) {
 // function call after each room
 function update(comparison) {
   if (comparison == "livingroomfin") {
-    const para1 = document.createElement("p");
-    const node1 = document.createTextNode("update from Living room");
-    para1.appendChild(node1);
-    document.getElementById("reportcontent").appendChild(para1);
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        updates(snapshot.docs);
+      });
+    const updates = (obj) => {
+      let p = obj[1].data();
+      p = p.Update1;
+      const para1 = document.createElement("p");
+      const node1 = document.createTextNode(p);
+      para1.appendChild(node1);
+      document.getElementById("reportcontent").appendChild(para1);
+    };
   } else if (comparison == "bedroomfin") {
-    const para2 = document.createElement("p");
-    const node2 = document.createTextNode("update from bed room");
-    para2.appendChild(node2);
-    document.getElementById("reportcontent").appendChild(para2);
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        updates(snapshot.docs);
+      });
+    const updates = (obj) => {
+      let p = obj[1].data();
+      p = p.Update2;
+      const para2 = document.createElement("p");
+      const node2 = document.createTextNode(p);
+      para2.appendChild(node2);
+      document.getElementById("reportcontent").appendChild(para2);
+    };
   } else if (comparison == "studyroomfin") {
-    const para3 = document.createElement("p");
-    const node3 = document.createTextNode("update from study room");
-    para3.appendChild(node3);
-    document.getElementById("reportcontent").appendChild(para3);
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        updates(snapshot.docs);
+      });
+    const updates = (obj) => {
+      let p = obj[1].data();
+      p = p.Update3;
+      const para3 = document.createElement("p");
+      const node3 = document.createTextNode(p);
+      para3.appendChild(node3);
+      document.getElementById("reportcontent").appendChild(para3);
+    };
   } else if (comparison == "storeroomfin") {
-    const para4 = document.createElement("p");
-    const node4 = document.createTextNode("update from store room");
-    para4.appendChild(node4);
-    document.getElementById("reportcontent").appendChild(para4);
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        updates(snapshot.docs);
+      });
+    const updates = (obj) => {
+      let p = obj[1].data();
+      p = p.Update4;
+      console.log(p);
+      const para4 = document.createElement("p");
+      const node4 = document.createTextNode(p);
+      para4.appendChild(node4);
+      document.getElementById("reportcontent").appendChild(para4);
+    };
   } else if (comparison == "kitchenfin") {
-    const para5 = document.createElement("p");
-    const node5 = document.createTextNode("update from Kitchen");
-    para5.appendChild(node5);
-    document.getElementById("reportcontent").appendChild(para5);
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        updates(snapshot.docs);
+      });
+    const updates = (obj) => {
+      let p = obj[1].data();
+      p = p.Update5;
+      const para5 = document.createElement("p");
+      const node5 = document.createTextNode(p);
+      para5.appendChild(node5);
+      document.getElementById("reportcontent").appendChild(para5);
+    };
   }
 }
 
-//temp auth
-// retive data from the database for the password
+//Riidle auths
 
-//getting forms
+//form 1
 const form1 = document.getElementById("Form1");
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -230,10 +278,123 @@ form1.addEventListener("submit", (e) => {
     });
   const storeData1 = (objs) => {
     const dt = objs[0].data();
-    console.log(dt);
     if (pass1 == dt.Room1) {
       alert("success");
       hide();
     } else alert("nope");
   };
 });
+
+//form 2
+function auth2() {
+  const form2 = document.getElementById("Form2");
+  form2.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const pass2 = form2["password2"].value;
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        storeData2(snapshot.docs);
+      });
+    const storeData2 = (objs) => {
+      const dt = objs[0].data();
+
+      if (pass2 == dt.Room2) {
+        alert("success");
+        hide2();
+      } else alert("nopes");
+    };
+  });
+}
+//from 3
+function auth3() {
+  const form3 = document.getElementById("Form3");
+  form3.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const pass3 = form3["password3"].value;
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        storeData1(snapshot.docs);
+      });
+    const storeData1 = (objs) => {
+      const dt = objs[0].data();
+
+      if (pass3 == dt.Room3) {
+        alert("success");
+        hide3();
+      } else alert("nope");
+    };
+  });
+}
+
+//form 4
+function auth4() {
+  const form4 = document.getElementById("Form4");
+  form4.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const pass4 = form4["password4"].value;
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        storeData1(snapshot.docs);
+      });
+    const storeData1 = (objs) => {
+      const dt = objs[0].data();
+
+      if (pass4 == dt.Room4) {
+        alert("success");
+        hide4();
+      } else alert("nope");
+    };
+  });
+}
+
+// FUNCTION FOR OPENING RIDDLE / CP AUTH
+const riddlefroms = document.querySelectorAll(".riddleform");
+var id1;
+var id2;
+var id3;
+var id4;
+var id5;
+for (let k = 0; k < 5; k++) {
+  console.log(k);
+  riddlefroms[k].addEventListener("submit", (e) => {
+    e.preventDefault();
+    var id1 = document.getElementById("pass1").value;
+    var id2 = document.getElementById("pass2").value;
+    var id3 = document.getElementById("pass3").value;
+    var id4 = document.getElementById("pass4").value;
+    var id5 = document.getElementById("pass5").value;
+
+    db.collection("Test")
+      .get()
+      .then((snapshot) => {
+        riddledata(snapshot.docs);
+      });
+    const riddledata = (array) => {
+      let data = array[0].data();
+      if (id1 == data.Room1) {
+        document.querySelector(".parent11").style.display = "none";
+        document.querySelector(".parent1").style.display = "block";
+      }
+      if (id2 == data.Room2) {
+        document.querySelector(".parent21").style.display = "none";
+        document.querySelector(".parent2").style.display = "block";
+        console.log("bleeh");
+      }
+      if (id3 == data.Room3) {
+        document.querySelector(".parent31").style.display = "none";
+        document.querySelector(".parent3").style.display = "block";
+      }
+      if (id4 == data.Room4) {
+        document.querySelector(".parent41").style.display = "none";
+        document.querySelector(".parent4").style.display = "block";
+      }
+      if (id5 == data.Room5) {
+        document.querySelector(".parent51").style.display = "none";
+        document.querySelector(".parent5").style.display = "block";
+      }
+    };
+  });
+}
