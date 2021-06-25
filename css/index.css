@@ -44,6 +44,7 @@ body {
   position: absolute;
   z-index: 2;
 }
+
 #liveb,
 #liveleft,
 #liveright,
@@ -53,9 +54,9 @@ body {
 
 /* glass effec */
 .glass {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
   height: 60vh;
   border: 1px solid;
   padding: 20px;
@@ -79,13 +80,14 @@ body {
 .parent31,
 .parent41,
 .parent51 {
+  color: white;
   margin: 0 auto;
-  width: 76vw;
-  height: 80vh;
+  width: 66vw;
+  height: 85vh;
   margin-top: 5%;
   vertical-align: middle;
   /* background-color: white; */
-  background-image: url("../assets/2278.jpg");
+  background-image: url("../assets/adfs.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -93,10 +95,14 @@ body {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 80vh;
-  margin-top: 5%;
+  height: 90vh;
+  margin-top: 3%;
+  margin-left: 12%;
   vertical-align: middle;
-  background-color: white;
+  /* background-color: white; */
+  background-image: url("../assets/bedroom.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .parent3 {
   display: none;
@@ -127,15 +133,30 @@ body {
 }
 .report {
   margin: 0 auto;
-  width: 40vw;
-  height: 100vh;
-  /* margin-top: 5%; */
+  width: 70vw;
+  height: 85vh;
+  margin-top: 5%;
   vertical-align: middle;
+  padding: 20px 140px;
   /* background-color: white; */
-  background-image: url("../assets/clipboard.png");
-  background-size: contain;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/858024925741842462/report.png");
+  background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.report::-webkit-scrollbar {
+  display: none;
+}
+.report h1 {
+  text-align: center;
+}
+.report p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .red {
   margin: 0 auto;
   width: 80vw;
