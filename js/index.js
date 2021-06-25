@@ -65,6 +65,11 @@ function visible6() {
   }
 }
 
+//popup for redirdect
+function visible7() {
+  var x = document.getElementById("redirect");
+  x.style.display = "block";
+}
 // room to room highlight
 
 // bedroom colour
@@ -184,6 +189,10 @@ function hide5(kitchenthis) {
   var update5 = kitchenthis.id;
   update(update5);
   visible5();
+
+  setTimeout(() => {
+    visible7();
+  }, 1000);
 }
 
 // Report update functions
@@ -351,50 +360,158 @@ function auth4() {
 }
 
 // FUNCTION FOR OPENING RIDDLE / CP AUTH
-const riddlefroms = document.querySelectorAll(".riddleform");
-var id1;
-var id2;
-var id3;
-var id4;
-var id5;
-for (let k = 0; k < 5; k++) {
-  console.log(k);
-  riddlefroms[k].addEventListener("submit", (e) => {
-    e.preventDefault();
-    var id1 = document.getElementById("pass1").value;
-    var id2 = document.getElementById("pass2").value;
-    var id3 = document.getElementById("pass3").value;
-    var id4 = document.getElementById("pass4").value;
-    var id5 = document.getElementById("pass5").value;
 
-    db.collection("Test")
-      .get()
-      .then((snapshot) => {
-        riddledata(snapshot.docs);
-      });
-    const riddledata = (array) => {
-      let data = array[0].data();
-      if (id1 == data.Room1) {
-        document.querySelector(".parent11").style.display = "none";
-        document.querySelector(".parent1").style.display = "block";
-      }
-      if (id2 == data.Room2) {
-        document.querySelector(".parent21").style.display = "none";
-        document.querySelector(".parent2").style.display = "block";
-        console.log("bleeh");
-      }
-      if (id3 == data.Room3) {
-        document.querySelector(".parent31").style.display = "none";
-        document.querySelector(".parent3").style.display = "block";
-      }
-      if (id4 == data.Room4) {
-        document.querySelector(".parent41").style.display = "none";
-        document.querySelector(".parent4").style.display = "block";
-      }
-      if (id5 == data.Room5) {
-        document.querySelector(".parent51").style.display = "none";
-        document.querySelector(".parent5").style.display = "block";
-      }
-    };
-  });
-}
+const rid1 = document.getElementById("riddle1");
+rid1.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid1["pass1"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room1) {
+      alert("success");
+      document.querySelector(".parent11").style.display = "none";
+      document.querySelector(".parent1").style.display = "block";
+    } else alert("nope");
+  };
+});
+
+const rid2 = document.getElementById("riddle2");
+rid2.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid2["pass2"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room2) {
+      alert("success");
+      document.querySelector(".parent21").style.display = "none";
+      document.querySelector(".parent2").style.display = "block";
+    } else alert("nope");
+  };
+});
+const rid3 = document.getElementById("riddle3");
+rid3.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid3["pass3"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room3) {
+      alert("success");
+      document.querySelector(".parent31").style.display = "none";
+      document.querySelector(".parent3").style.display = "block";
+    } else alert("nope");
+  };
+});
+const rid4 = document.getElementById("riddle4");
+rid4.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid4["pass4"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room4) {
+      alert("success");
+      document.querySelector(".parent41").style.display = "none";
+      document.querySelector(".parent4").style.display = "block";
+    } else alert("nope");
+  };
+});
+const rid5 = document.getElementById("riddle5");
+rid5.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid5["pass5"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room5) {
+      alert("success");
+      document.querySelector(".parent51").style.display = "none";
+      document.querySelector(".parent5").style.display = "block";
+    } else alert("nope");
+  };
+});
+// const riddlefroms = document.querySelectorAll(".riddleform");
+// var id1 = " ";
+// var id2 = " ";
+// var id3 = " ";
+// var id4 = " ";
+// var id5 = " ";
+// for (let k = 0; k < 5; k++) {
+//   riddlefroms[k].addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     id1 = document.getElementById("pass1").value;
+//     id2 = document.getElementById("pass2").value;
+//     id3 = document.getElementById("pass3").value;
+//     id4 = document.getElementById("pass4").value;
+//     id5 = document.getElementById("pass5").value;
+
+//     db.collection("Test")
+//       .get()
+//       .then((snapshot) => {
+//         riddledata(snapshot.docs);
+//       });
+//     const riddledata = (array) => {
+//       let data = array[0].data();
+//       if (id1 == data.Room1) {
+//       } else if (id1 != " " && id1 != data.Room1) {
+//         alert("NO");
+//         console.log("1");
+//       }
+
+//       if (id2 == data.Room2) {
+//         document.querySelector(".parent21").style.display = "none";
+//         document.querySelector(".parent2").style.display = "block";
+//         console.log("bleeh");
+//       } else if (id2 != " " && id2 != data.Room2) {
+//         alert("NO");
+//         console.log("2");
+//       }
+
+//       if (id3 == data.Room3) {
+//         document.querySelector(".parent31").style.display = "none";
+//         document.querySelector(".parent3").style.display = "block";
+//       } else if (id3 != " " && id3 != data.Room3) {
+//         alert("NO");
+//         console.log("3");
+//       }
+
+//       if (id4 == data.Room4) {
+//         document.querySelector(".parent41").style.display = "none";
+//         document.querySelector(".parent4").style.display = "block";
+//       } else if (id4 != " " && id4 != data.Room4) {
+//         alert("NO");
+//         console.log("4");
+//       }
+
+//       if (id5 == data.Room5) {
+//         document.querySelector(".parent51").style.display = "none";
+//         document.querySelector(".parent5").style.display = "block";
+//       } else if (id5 != " " && id5 != data.Room4) {
+//         alert("NO");
+//         console.log("5");
+//       }
+//     };
+//   });
+// }
