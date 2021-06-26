@@ -1,9 +1,13 @@
 // 1st set of event listeners
-var hi = document.getElementsByClassName("living");
-for (var i = 0; i < hi.length; i++) {
-  hi[i].addEventListener("click", visible1);
+function room1colour() {
+  var hi = document.getElementsByClassName("kitchen");
+  for (var i = 0; i < hi.length; i++) {
+    hi[i].addEventListener("click", visible1);
+    hi[i].classList.add("blink");
+    hi[i].style.cursor = "pointer";
+  }
+  document.querySelector(".cliphide").style.display = "block";
 }
-
 // popup code
 
 //popup for living room
@@ -104,7 +108,7 @@ function room4colour() {
 }
 //kitchen room color
 function room5colour() {
-  var add = document.getElementsByClassName("kitchen");
+  var add = document.getElementsByClassName("living");
   for (var i = 0; i < add.length; i++) {
     add[i].classList.add("blink");
     add[i].style.cursor = "pointer";
@@ -116,7 +120,7 @@ function room5colour() {
 
 // hide to hide living room
 function hide() {
-  var rem = document.getElementsByClassName("living");
+  var rem = document.getElementsByClassName("kitchen");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
     rem[i].removeEventListener("click", visible1);
@@ -180,7 +184,7 @@ function hide4() {
 
 // hide to hide kitchen room
 function hide5(kitchenthis) {
-  var rem = document.getElementsByClassName("kitchen");
+  var rem = document.getElementsByClassName("living");
   for (var i = 0; i < rem.length; i++) {
     rem[i].classList.remove("blink");
     rem[i].removeEventListener("click", visible5);
@@ -200,82 +204,74 @@ function hide5(kitchenthis) {
 // function call after each room
 function update(comparison) {
   if (comparison == "livingroomfin") {
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
-      let p = obj[1].data();
-      p = p.Update1;
-      const para1 = document.createElement("p");
-      const node1 = document.createTextNode(p);
-      para1.appendChild(node1);
-      document.getElementById("reportcontent").appendChild(para1);
+      let p = obj[0].data();
+      let a = document.querySelectorAll(".h11");
+      for (let i = 0; i < 3; i++) {
+        a[i].style.display = "block";
+      }
+      document.getElementById("p11").innerHTML = p.living1;
+      document.getElementById("p12").innerHTML = p.living2;
     };
   } else if (comparison == "bedroomfin") {
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
-      let p = obj[1].data();
-      p = p.Update2;
-      const para2 = document.createElement("p");
-      const node2 = document.createTextNode(p);
-      para2.appendChild(node2);
-      document.getElementById("reportcontent").appendChild(para2);
+      let p = obj[0].data();
+      document.querySelector(".h21").style.display = "block";
+      document.getElementById("p21").innerHTML = p.bed1;
+      document.getElementById("p22").innerHTML = p.bed2;
     };
   } else if (comparison == "studyroomfin") {
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
-      let p = obj[1].data();
-      p = p.Update3;
-      const para3 = document.createElement("p");
-      const node3 = document.createTextNode(p);
-      para3.appendChild(node3);
-      document.getElementById("reportcontent").appendChild(para3);
+      let p = obj[0].data();
+      document.querySelector(".h31").style.display = "block";
+      document.getElementById("p31").innerHTML = p.study1;
+      document.getElementById("p32").innerHTML = p.study2;
     };
   } else if (comparison == "storeroomfin") {
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
-      let p = obj[1].data();
-      p = p.Update4;
-      console.log(p);
-      const para4 = document.createElement("p");
-      const node4 = document.createTextNode(p);
-      para4.appendChild(node4);
-      document.getElementById("reportcontent").appendChild(para4);
+      let p = obj[0].data();
+      document.querySelector(".h41").style.display = "block";
+      document.getElementById("p41").innerHTML = p.store1;
+      document.getElementById("p42").innerHTML = p.store2;
     };
   } else if (comparison == "kitchenfin") {
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
       let p = obj[1].data();
-      p = p.Update5;
-      const para5 = document.createElement("p");
-      const node5 = document.createTextNode(p);
-      para5.appendChild(node5);
-      document.getElementById("reportcontent").appendChild(para5);
+      document.querySelector(".h51").style.display = "block";
+      document.getElementById("p51").innerHTML = p.kitchen1;
+      document.getElementById("p52").innerHTML = p.kitchen2;
     };
   }
 }
 
 //Riidle auths
 
-//form 1
+//form 1 for kitchen
 const form1 = document.getElementById("Form1");
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -360,6 +356,26 @@ function auth4() {
 }
 
 // FUNCTION FOR OPENING RIDDLE / CP AUTH
+const rid = document.getElementById("riddle");
+rid.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const pass1 = rid["pass"].value;
+  db.collection("Test")
+    .get()
+    .then((snapshot) => {
+      storeData1(snapshot.docs);
+    });
+  const storeData1 = (objs) => {
+    const dt = objs[0].data();
+    if (pass1 == dt.Room1) {
+      document.querySelector("#room").style.display = "none";
+      setTimeout(() => {
+        document.querySelector(".cliphide").style.display = "block";
+        room1colour();
+      }, 2000);
+    } else alert("nope");
+  };
+});
 
 const rid1 = document.getElementById("riddle1");
 rid1.addEventListener("submit", (e) => {
@@ -452,66 +468,3 @@ rid5.addEventListener("submit", (e) => {
     } else alert("nope");
   };
 });
-// const riddlefroms = document.querySelectorAll(".riddleform");
-// var id1 = " ";
-// var id2 = " ";
-// var id3 = " ";
-// var id4 = " ";
-// var id5 = " ";
-// for (let k = 0; k < 5; k++) {
-//   riddlefroms[k].addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     id1 = document.getElementById("pass1").value;
-//     id2 = document.getElementById("pass2").value;
-//     id3 = document.getElementById("pass3").value;
-//     id4 = document.getElementById("pass4").value;
-//     id5 = document.getElementById("pass5").value;
-
-//     db.collection("Test")
-//       .get()
-//       .then((snapshot) => {
-//         riddledata(snapshot.docs);
-//       });
-//     const riddledata = (array) => {
-//       let data = array[0].data();
-//       if (id1 == data.Room1) {
-//       } else if (id1 != " " && id1 != data.Room1) {
-//         alert("NO");
-//         console.log("1");
-//       }
-
-//       if (id2 == data.Room2) {
-//         document.querySelector(".parent21").style.display = "none";
-//         document.querySelector(".parent2").style.display = "block";
-//         console.log("bleeh");
-//       } else if (id2 != " " && id2 != data.Room2) {
-//         alert("NO");
-//         console.log("2");
-//       }
-
-//       if (id3 == data.Room3) {
-//         document.querySelector(".parent31").style.display = "none";
-//         document.querySelector(".parent3").style.display = "block";
-//       } else if (id3 != " " && id3 != data.Room3) {
-//         alert("NO");
-//         console.log("3");
-//       }
-
-//       if (id4 == data.Room4) {
-//         document.querySelector(".parent41").style.display = "none";
-//         document.querySelector(".parent4").style.display = "block";
-//       } else if (id4 != " " && id4 != data.Room4) {
-//         alert("NO");
-//         console.log("4");
-//       }
-
-//       if (id5 == data.Room5) {
-//         document.querySelector(".parent51").style.display = "none";
-//         document.querySelector(".parent5").style.display = "block";
-//       } else if (id5 != " " && id5 != data.Room4) {
-//         alert("NO");
-//         console.log("5");
-//       }
-//     };
-//   });
-// }
