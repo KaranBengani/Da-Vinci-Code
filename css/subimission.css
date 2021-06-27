@@ -4,4 +4,107 @@
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+}
+
+.cov {
+  transform: translate(80px, 200px);
+}
+
+#submission {
+  overflow-y: scroll;
+  height: 55vh;
+  width: 35vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#submission input {
+  background-color: transparent;
+  /* color: white; */
+}
+#justi,
+#inputSuspect,
+#inputyear {
+  background-color: transparent;
+  /* color: white; */
+}
+#submission::-webkit-scrollbar {
+  display: none;
+}
+#submission label {
+  color: white;
+  /* font-size: 18px; */
+}
+#submission::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+::-webkit-input-placeholder {
+  color: white;
+}
+#submission:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#submission::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+/* report */
+#report {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+}
+.closebutton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  right: 0;
+  top: 0;
+  position: fixed;
+  font-size: 40px;
+  cursor: pointer;
+}
+.report {
+  margin: 0 auto;
+  width: 70vw;
+  height: 85vh;
+  margin-top: 5%;
+  vertical-align: middle;
+  padding: 20px 140px;
+  /* background-color: white; */
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/858024925741842462/report.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.report::-webkit-scrollbar {
+  display: none;
+}
+.report h1 {
+  text-align: center;
+}
+.report p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.clipboard {
+  transform: translateY(110px);
+  height: auto;
+  width: 6vw;
+  margin-left: 4%;
+  cursor: pointer;
 }
