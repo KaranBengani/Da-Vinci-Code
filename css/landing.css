@@ -1,0 +1,70 @@
+:root {
+  --bg: #0c0c0f;
+  --h1: #fff;
+  --yellow: #fdfd96;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg);
+}
+.mansion {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.mansion svg {
+  height: 110%;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+#doorleft,
+#doorright {
+  height: 20.8vh;
+  width: 0.4vw;
+  transform: translate(-2px, -9.6px);
+}
+#doorup,
+#doorb {
+  width: 5.8vw;
+  height: 0.8vh;
+  transform: translateX(-5px);
+}
+
+/* blink animation */
+
+@keyframes blink {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--yellow);
+  }
+}
+
+.blink {
+  animation: blink 1s infinite alternate;
+}
+
+.door {
+  cursor: pointer;
+}
+
+/* herolanding */
+.herolanding {
+  width: 100vw;
+  height: 115vh;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/859022403144515625/adfs.png");
+  background-size: cover;
+
+  /* overflow-x: hidden; */
+}
+
+/* content */
+.content {
+  width: 100vw;
+  height: 100vh;
+}

@@ -7,6 +7,9 @@
 body {
   background-color: var(--bg);
 }
+a {
+  text-decoration: none;
+}
 .mansion {
   height: 100vh;
   width: 100vw;
@@ -63,11 +66,11 @@ body {
 }
 .imgcontent {
   height: 95vh;
-  width: 50vw;
+  width: 60vw;
   /* background-color: white;  */
   margin-top: 1%;
-  margin-left: 10%;
-  background-image: url("../assets/clipboard.png");
+  margin-left: 6%;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/859086068611809290/page3.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -82,6 +85,19 @@ body {
   margin-top: 6%;
   color: white;
 }
+.opening1 {
+  text-align: center;
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.roomrid2 {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
 /* glass effec */
 .glass {
   backdrop-filter: blur(4px);
@@ -95,7 +111,7 @@ body {
 }
 .opening {
   text-align: center;
-  width: 90%;
+  width: 92%;
   margin: 0 auto;
   margin-bottom: 30px;
   font-size: 20px;
@@ -105,10 +121,6 @@ body {
   width: 75%;
   margin: 0 auto;
   margin-bottom: 30px;
-}
-
-.gccbutton {
-  margin: 0 auto;
 }
 
 .parent1 {
@@ -135,7 +147,7 @@ body {
   margin-top: 6%;
   vertical-align: middle;
   /* background-color: white; */
-  background-image: url("../assets/adfs.png");
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/859022403144515625/adfs.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -212,6 +224,12 @@ body {
   margin-top: 5%;
   vertical-align: middle;
   background-color: white;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/858024925741842462/report.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.red h1 {
+  text-align: center;
 }
 .closebutton {
   background-color: transparent;
@@ -236,11 +254,7 @@ body {
 }
 
 .blink {
-  animation: blink 0.5s infinite alternate;
-}
-
-.btn-primary {
-  transform: translateY(-200px);
+  animation: blink 0.8s infinite alternate;
 }
 
 /* modal css */
@@ -353,19 +367,19 @@ figcaption {
   color: white;
   transform: translateY(-209px);
   margin-left: 5%;
+  text-decoration: none;
 }
 .cliphide {
   display: none;
 }
-/* gcc button  */
 
-/* inpout fields */
+/* input fields */
 #pass1,
 #pass2,
 #pass3,
 #pass4,
 #pass5 {
-  width: 65%;
+  width: 85%;
   border-radius: 12px;
 }
 
@@ -376,4 +390,134 @@ figcaption {
 .h41,
 .h51 {
   display: none;
+}
+
+/* button */
+
+.gccbutton {
+  background: #222;
+  height: 35px;
+  min-width: 100px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 18px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.gccbutton #circle {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gccbutton:hover {
+  background: transparent;
+}
+
+.gccbutton:hover #circle {
+  height: 35px;
+  width: 100px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+}
+
+/* blink height and width adjustments */
+
+/* kitchen */
+
+#kitchenb,
+#studyb {
+  width: 15.6vw;
+  transform: translateX(-10px);
+  height: 7px;
+}
+
+#kitchenright,
+#kitchenleft {
+  height: 23.5vh;
+  width: 7px;
+  transform: translateY(-20px);
+}
+
+/* bedroom */
+
+#bedup,
+#liveup {
+  width: 16.6vw;
+  transform: translateX(-30px);
+  height: 7px;
+}
+#liveup {
+  transform: translateX(-35px);
+}
+#bedright,
+#bedleft {
+  height: 25.5vh;
+  width: 7px;
+  transform: translateY(-20px);
+}
+
+/* study room */
+#studyup {
+  width: 15.6vw;
+  transform: translateX(-15px);
+  height: 7px;
+}
+#studyright,
+#studyleft {
+  height: 25.5vh;
+  width: 7px;
+  transform: translateY(-16px);
+}
+
+/* store room  */
+
+#storeright {
+  height: 47.9vh;
+  width: 7px;
+  transform: translateY(-16px);
+}
+#storeup,
+#storeb {
+  width: 16.8vw;
+  transform: translateX(-13px);
+  height: 7px;
+}
+
+/* living room  */
+#liveb {
+  width: 16.6vw;
+  transform: translateX(-20px);
+  height: 7px;
+}
+#liveright,
+#liveleft {
+  height: 23vh;
+  width: 7px;
+  transform: translateY(-20px);
 }

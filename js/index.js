@@ -118,7 +118,7 @@ function room5colour() {
 
 // hide functions
 
-// hide to hide living room
+// hide to hide kitchen room
 function hide() {
   var rem = document.getElementsByClassName("kitchen");
   for (var i = 0; i < rem.length; i++) {
@@ -182,7 +182,7 @@ function hide4() {
   visible4();
 }
 
-// hide to hide kitchen room
+// hide to hide living room
 function hide5(kitchenthis) {
   var rem = document.getElementsByClassName("living");
   for (var i = 0; i < rem.length; i++) {
@@ -261,7 +261,7 @@ function update(comparison) {
         updates(snapshot.docs);
       });
     const updates = (obj) => {
-      let p = obj[1].data();
+      let p = obj[0].data();
       document.querySelector(".h51").style.display = "block";
       document.getElementById("p51").innerHTML = p.kitchen1;
       document.getElementById("p52").innerHTML = p.kitchen2;

@@ -18,39 +18,51 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-#submission input {
+/* #submission {
   background-color: transparent;
-  /* color: white; */
-}
+  color: white;
+} */
+.form-control::-webkit-input-placeholder {
+  color: white;
+} /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder {
+  color: white;
+} /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder {
+  color: white;
+} /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder {
+  color: white;
+} /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder {
+  color: white;
+} /* Microsoft Edge */
+#inputname4,
+#inputEmail4,
+#inputname3,
+#inputdept,
+#inputnumber,
 #justi,
 #inputSuspect,
 #inputyear {
   background-color: transparent;
-  /* color: white; */
+  color: white;
 }
+
+#justi {
+  height: 28vh;
+}
+
+option {
+  color: black;
+}
+
 #submission::-webkit-scrollbar {
   display: none;
 }
 #submission label {
   color: white;
   /* font-size: 18px; */
-}
-#submission::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
-}
-::-webkit-input-placeholder {
-  color: white;
-}
-#submission:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: white;
-}
-
-#submission::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: white;
 }
 
 /* report */
@@ -107,4 +119,63 @@
   width: 6vw;
   margin-left: 4%;
   cursor: pointer;
+}
+figcaption {
+  color: white;
+  transform: translateY(109px);
+  margin-left: 5%;
+}
+
+/* button */
+
+.gccbutton {
+  background: #222;
+  height: 40px;
+  min-width: 110px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 20px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.gccbutton #circle {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gccbutton:hover {
+  background: transparent;
+}
+
+.gccbutton:hover #circle {
+  height: 40px;
+  width: 110px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
 }
