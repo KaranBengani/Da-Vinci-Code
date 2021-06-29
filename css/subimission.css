@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
 .mainbody {
   background-image: url("../assets/adfs.png");
   height: 100vh;
@@ -107,10 +110,19 @@ option {
 }
 .report h1 {
   text-align: center;
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 60px;
+}
+.report h3 {
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 40px;
 }
 .report p {
-  font-size: 18px;
-  font-weight: 500;
+  font-family: "Marck Script", cursive;
+  font-size: 27px;
+  /* font-weight: 700; */
 }
 
 .clipboard {
@@ -178,4 +190,9 @@ figcaption {
   left: 0;
   border-radius: 0;
   border-bottom: 2px solid #eee;
+}
+
+/* hide */
+#hideforever {
+  display: none;
 }

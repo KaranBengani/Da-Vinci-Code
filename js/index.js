@@ -1,3 +1,24 @@
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+  apiKey: "AIzaSyApb7dWwDh4u31z44SL9cOoZespeuH9zW0",
+  authDomain: "da-vinci-code-auth.firebaseapp.com",
+  projectId: "da-vinci-code-auth",
+  storageBucket: "da-vinci-code-auth.appspot.com",
+  messagingSenderId: "931364964224",
+  appId: "1:931364964224:web:2ae6add01fefb2eed52365",
+  measurementId: "G-5KBELPGLNW",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+//firestore references
+const db = firebase.firestore();
+
+//update settings
+db.settings({ timestampsInSnapshots: true });
+
 // 1st set of event listeners
 function room1colour() {
   var hi = document.getElementsByClassName("kitchen");
@@ -276,17 +297,16 @@ const form1 = document.getElementById("Form1");
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = form1["password1"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room1) {
-      alert("success");
+    const dt = objs[1].data();
+    if (pass1 == dt.kitchen) {
       hide();
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 
@@ -296,18 +316,17 @@ function auth2() {
   form2.addEventListener("submit", (e) => {
     e.preventDefault();
     const pass2 = form2["password2"].value;
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         storeData2(snapshot.docs);
       });
     const storeData2 = (objs) => {
-      const dt = objs[0].data();
+      const dt = objs[1].data();
 
-      if (pass2 == dt.Room2) {
-        alert("success");
+      if (pass2 == dt.bed) {
         hide2();
-      } else alert("nopes");
+      } else alert("Sorry your answer is incorrect!! Please try agains");
     };
   });
 }
@@ -317,18 +336,17 @@ function auth3() {
   form3.addEventListener("submit", (e) => {
     e.preventDefault();
     const pass3 = form3["password3"].value;
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         storeData1(snapshot.docs);
       });
     const storeData1 = (objs) => {
-      const dt = objs[0].data();
+      const dt = objs[1].data();
 
-      if (pass3 == dt.Room3) {
-        alert("success");
+      if (pass3 == dt.study) {
         hide3();
-      } else alert("nope");
+      } else alert("Sorry your answer is incorrect!! Please try again");
     };
   });
 }
@@ -339,18 +357,17 @@ function auth4() {
   form4.addEventListener("submit", (e) => {
     e.preventDefault();
     const pass4 = form4["password4"].value;
-    db.collection("Test")
+    db.collection("Final")
       .get()
       .then((snapshot) => {
         storeData1(snapshot.docs);
       });
     const storeData1 = (objs) => {
-      const dt = objs[0].data();
+      const dt = objs[1].data();
 
-      if (pass4 == dt.Room4) {
-        alert("success");
+      if (pass4 == dt.store) {
         hide4();
-      } else alert("nope");
+      } else alert("Sorry your answer is incorrect!! Please try again");
     };
   });
 }
@@ -360,20 +377,20 @@ const rid = document.getElementById("riddle");
 rid.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid["pass"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room1) {
+    const dt = objs[1].data();
+    if (pass1 == dt.open) {
       document.querySelector("#room").style.display = "none";
       setTimeout(() => {
         document.querySelector(".cliphide").style.display = "block";
         room1colour();
-      }, 2000);
-    } else alert("nope");
+      }, 1500);
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 
@@ -381,18 +398,17 @@ const rid1 = document.getElementById("riddle1");
 rid1.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid1["pass1"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room1) {
-      alert("success");
+    const dt = objs[2].data();
+    if (pass1 == dt.wife) {
       document.querySelector(".parent11").style.display = "none";
       document.querySelector(".parent1").style.display = "block";
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 
@@ -400,71 +416,75 @@ const rid2 = document.getElementById("riddle2");
 rid2.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid2["pass2"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room2) {
-      alert("success");
+    const dt = objs[2].data();
+    if (pass1 == dt.father) {
       document.querySelector(".parent21").style.display = "none";
       document.querySelector(".parent2").style.display = "block";
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 const rid3 = document.getElementById("riddle3");
 rid3.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid3["pass3"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room3) {
-      alert("success");
+    const dt = objs[2].data();
+    if (pass1 == dt.pa) {
       document.querySelector(".parent31").style.display = "none";
       document.querySelector(".parent3").style.display = "block";
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 const rid4 = document.getElementById("riddle4");
 rid4.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid4["pass4"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room4) {
-      alert("success");
+    const dt = objs[2].data();
+    if (pass1 == dt.brother) {
       document.querySelector(".parent41").style.display = "none";
       document.querySelector(".parent4").style.display = "block";
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
 const rid5 = document.getElementById("riddle5");
 rid5.addEventListener("submit", (e) => {
   e.preventDefault();
   const pass1 = rid5["pass5"].value;
-  db.collection("Test")
+  db.collection("Final")
     .get()
     .then((snapshot) => {
       storeData1(snapshot.docs);
     });
   const storeData1 = (objs) => {
-    const dt = objs[0].data();
-    if (pass1 == dt.Room5) {
-      alert("success");
+    const dt = objs[2].data();
+    if (pass1 == dt.son) {
       document.querySelector(".parent51").style.display = "none";
       document.querySelector(".parent5").style.display = "block";
-    } else alert("nope");
+    } else alert("Sorry your answer is incorrect!! Please try again");
   };
 });
+
+// link to compiler
+// var compiler = document.querySelectorAll(".compiler");
+// for(let i = 0 ; i<3 ; i++){
+//   compiler[i].addEventListener("click", () =>{
+//     window.open("","_blank");
+//   })
+// }

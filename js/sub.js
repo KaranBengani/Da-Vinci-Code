@@ -1,3 +1,15 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAGT7XZu1AXkHkDQGACrgC82raB4mbd3Cg",
+  authDomain: "submission-form-29222.firebaseapp.com",
+  projectId: "submission-form-29222",
+  storageBucket: "submission-form-29222.appspot.com",
+  messagingSenderId: "157921664061",
+  appId: "1:157921664061:web:ff74b9edcb23534e93de54",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 const DB = firebase.firestore();
 DB.settings({ timestampsInSnapshots: true });
 
@@ -22,17 +34,27 @@ form.addEventListener("submit", (e) => {
 });
 
 function pushData(name, email, reg, dept, mob, year, answer, explanation) {
-  DB.collection("Responses").doc().set({
-    Fullname: name,
-    Email: email,
-    Registeration_Number: reg,
-    Department: dept,
-    Mobile_Number: mob,
-    Year: year,
-    Suspect: answer,
-    Justification: explanation,
-    created: firebase.firestore.Timestamp.now(),
-  });
+  DB.collection("Responses")
+    .doc()
+    .set({
+      Fullname: name,
+      Email: email,
+      Registeration_Number: reg,
+      Department: dept,
+      Mobile_Number: mob,
+      Year: year,
+      Suspect: answer,
+      Justification: explanation,
+      created: firebase.firestore.Timestamp.now(),
+    })
+    .then(() => {
+      alert(
+        "Your response has been submited. You will now be redirected to our website , do check it out and follow us on our social media handles to stay updates. All the best!!"
+      );
+      setTimeout(() => {
+        jump();
+      }, 2000);
+    });
 }
 
 //vivble function
@@ -43,4 +65,9 @@ function visible6() {
   } else {
     x.style.display = "none";
   }
+}
+
+// jump to gccatsrm.tech
+function jump() {
+  window.location.replace("https://www.gccatsrm.tech/");
 }
