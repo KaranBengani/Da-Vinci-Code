@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
 :root {
   --bg: #0c0c0f;
   --h1: #fff;
@@ -67,4 +70,83 @@ body {
 .content {
   width: 100vw;
   height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  transform: translateY(-35px);
+}
+.hero p {
+  font-weight: 700;
+  color: white;
+  font-size: 50px;
+  /* transform: translateY(-200px); */
+}
+
+.hero span {
+  font-family: "Parisienne", cursive;
+  font-weight: 700;
+  color: #933a16;
+  font-size: 30px;
+}
+.logop {
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  color: #933a16;
+  font-size: 50px;
+}
+/* logostyling */
+.logo {
+  height: 60vh;
+  width: auto;
+  margin: 0 auto;
+  margin: 20px 0;
+}
+
+.teamlogo {
+  height: 18vh;
+  width: auto;
+}
+
+.prep {
+  height: auto;
+  width: 15vw;
+}
+
+/* instruction */
+.content {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content img {
+  width: auto;
+  height: 40vh;
+  transform: translate(10px, 98px);
+}
+.content p {
+  font-family: "Parisienne", cursive;
+  font-weight: 700;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 100px;
+  transform: translateY(50px);
+}
+.p {
+  float: right;
+  width: 45vw;
+  font-family: "Marck Script", cursive;
+  font-size: 19px;
+  font-weight: 500;
+  margin-right: 2.2%;
+}
+
+h1 {
+  color: white;
+  font-family: "Parisienne", cursive;
+  font-weight: 700;
+  text-align: center;
+  font-size: 60px;
+  transform: translateY(90px);
 }
