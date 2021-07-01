@@ -49,7 +49,7 @@ function pushData(name, email, reg, dept, mob, year, answer, explanation) {
     })
     .then(() => {
       alert(
-        "Your response has been submited. You will now be redirected to our website , do check it out and follow us on our social media handles to stay updates. All the best!!"
+        "Your response has been submited. You will now be redirected to our website , do check it out and follow us on our social media handles to stay updated. All the best!!"
       );
       setTimeout(() => {
         jump();

@@ -482,9 +482,12 @@ rid5.addEventListener("submit", (e) => {
 });
 
 // link to compiler
-// var compiler = document.querySelectorAll(".compiler");
-// for(let i = 0 ; i<3 ; i++){
-//   compiler[i].addEventListener("click", () =>{
-//     window.open("","_blank");
-//   })
-// }
+var compiler = document.querySelectorAll(".compiler");
+for (let i = 0; i < 3; i++) {
+  compiler[i].addEventListener("click", () => {
+    window.open(
+      "https://www.programiz.com/c-programming/online-compiler/",
+      "_blank"
+    );
+  });
+}
