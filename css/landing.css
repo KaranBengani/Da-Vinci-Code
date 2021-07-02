@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+
 :root {
   --bg: #0c0c0f;
   --h1: #fff;
@@ -76,23 +80,29 @@ body {
   text-align: center;
   transform: translateY(-35px);
 }
-.hero p {
-  font-weight: 700;
-  color: white;
-  font-size: 40px;
-  /* transform: translateY(-200px); */
-}
 
-.hero span {
+.p1 {
+  font-weight: 900;
+  color: white;
+  font-size: 60px;
+  font-family: "Satisfy", cursive;
+  /* font-family: "Shadows Into Light", cursive; */
+  /* font-family: "Fjalla One", sans-serif; */
+}
+.span {
   font-family: "Parisienne", cursive;
   font-weight: 700;
-  color: #933a16;
+  /* color: #933a16; */
+  color: #a307bae6;
   font-size: 30px;
 }
 .logop {
+  font-weight: 700;
+  color: white;
+  font-size: 40px;
   font-family: "Parisienne", cursive;
   font-weight: 900;
-  color: #933a16;
+  /* color: #933a16; */
   font-size: 50px;
 }
 /* logostyling */
@@ -149,4 +159,8 @@ h1 {
   text-align: center;
   font-size: 60px;
   transform: translateY(90px);
+}
+
+.purple {
+  color: #a307bae6;
 }

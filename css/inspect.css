@@ -1,0 +1,18 @@
+body * {
+  display: none;
+  overflow: hidden;
+}
+body {
+  overflow: hidden !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  background-color: white !important;
+}
+body::before {
+  content: "DO NOT USE INSPECT ELEMENT!!";
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  position: absolute;
+  z-index: 10;
+}

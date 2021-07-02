@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
 :root {
   --bg: #0c0c0f;
   --h1: #fff;
@@ -9,8 +10,8 @@
 body {
   background-color: var(--bg);
 }
-a {
-  text-decoration: none;
+a:hover {
+  text-decoration: none !important;
 }
 .mansion {
   height: 100vh;
@@ -157,18 +158,25 @@ a {
   text-align: left;
   width: 95%;
 }
+
 .parent1 {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 80vh;
-  margin-top: 5%;
+  height: 87vh;
+  margin-top: 3.6%;
   vertical-align: middle;
   /* background-color: white; */
-  background-image: url("../assets/living.jpeg");
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/860543472560635919/kitchen_1.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
+.plate {
+  position: absolute;
+  transform: translate(456px, 279px);
+  cursor: pointer;
+}
+
 .parent11,
 .parent21,
 .parent31,
@@ -189,33 +197,35 @@ a {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 90vh;
-  margin-top: 3%;
-  margin-left: 12%;
+  height: 92vh;
+  margin-top: 2.2%;
+  margin-left: 10%;
   vertical-align: middle;
   /* background-color: white; */
-  background-image: url("../assets/bedroom.jpeg");
-  background-size: contain;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/860558431656476722/bed_1.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .parent3 {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 80vh;
-  margin-top: 5%;
+  height: 90vh;
+  margin-top: 2.9%;
   vertical-align: middle;
-  background-color: white;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/860565842579423272/study_1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .parent4 {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 90vh;
-  margin-top: 3%;
+  height: 87vh;
+  margin-top: 3.6%;
   vertical-align: middle;
   /* background-color: white; */
-  background-image: url("../assets/store.png");
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/860574549292089344/store_1.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -229,10 +239,12 @@ a {
   display: none;
   margin: 0 auto;
   width: 80vw;
-  height: 80vh;
-  margin-top: 5%;
+  height: 87vh;
+  margin-top: 3.6%;
   vertical-align: middle;
-  background-color: white;
+  background-image: url("https://cdn.discordapp.com/attachments/852945305280577588/860587725287456788/living_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .report {
   margin: 0 auto;
@@ -271,7 +283,7 @@ a {
 
 .red {
   margin: 0 auto;
-  width: 80vw;
+  width: 70vw;
   height: 80vh;
   margin-top: 5%;
   vertical-align: middle;
@@ -627,4 +639,200 @@ figcaption {
   height: 23vh;
   width: 7px;
   transform: translateY(-20px);
+}
+
+/* kaffi din baad update */
+.closebutton2 {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  /* right: 0;
+  top: 0;
+  position: relative; */
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.convo1 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 23px;
+  font-family: "Marck Script", cursive;
+}
+
+.misty1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(59px, 225px);
+}
+
+.shoe {
+  position: absolute;
+  transform: translate(912px, 627px);
+  cursor: pointer;
+}
+
+.convo2 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 6%;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: "Marck Script", cursive;
+}
+.father1 {
+  position: absolute;
+  z-index: 4;
+  height: 54vh;
+  width: auto;
+  transform: translate(919px, 270px);
+}
+.book {
+  position: absolute;
+  transform: translate(820px, 250px);
+  cursor: pointer;
+}
+.convo3 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 24px;
+  font-family: "Marck Script", cursive;
+}
+.pa1 {
+  position: absolute;
+  z-index: 4;
+  height: 58vh;
+  width: auto;
+  transform: translate(98px, 230px);
+}
+.lock {
+  position: absolute;
+  transform: translate(755px, 410px);
+  cursor: pointer;
+}
+.convo4 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: "Marck Script", cursive;
+}
+.bro1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(98px, 210px);
+}
+.photo {
+  position: absolute;
+  transform: translate(71px, 257px);
+  cursor: pointer;
+}
+.convo5 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 4%;
+  margin-top: 0.5%;
+  font-size: 19.5px;
+  font-family: "Marck Script", cursive;
+}
+.son1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(910px, 225px);
+}
+
+.reddiv {
+  margin: 0 auto;
+  height: auto;
+  width: 50%;
+  padding-top: 5%;
+}
+.reddiv h1 {
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 100px;
+}
+
+.reddiv p {
+  font-family: "Marck Script", cursive;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.reddiv a {
+  margin-left: 35% !important;
+}
+
+.gccbuttong {
+  background: #222;
+  height: 37px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 18px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.gccbuttong #circleg {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+.noselectg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gccbuttong:hover {
+  background: transparent;
+}
+
+.gccbuttong:hover #circleg {
+  height: 35px;
+  width: 170px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+  text-decoration: none;
 }

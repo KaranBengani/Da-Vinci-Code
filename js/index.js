@@ -491,3 +491,37 @@ for (let i = 0; i < 3; i++) {
     );
   });
 }
+
+// internal popups
+
+function poo1() {
+  var x = document.getElementById("convo1");
+  var y = document.querySelector(".misty1");
+  x.style.display = "none";
+  y.style.display = "none";
+}
+
+function poo2() {
+  var x = document.getElementById("convo2");
+  var y = document.querySelector(".father1");
+  x.style.display = "none";
+  y.style.display = "none";
+}
+function poo3() {
+  var x = document.getElementById("convo3");
+  var y = document.querySelector(".pa1");
+  x.style.display = "none";
+  y.style.display = "none";
+}
+function poo4() {
+  var x = document.getElementById("convo4");
+  var y = document.querySelector(".bro1");
+  x.style.display = "none";
+  y.style.display = "none";
+}
+function poo5() {
+  var x = document.getElementById("convo5");
+  var y = document.querySelector(".son1");
+  x.style.display = "none";
+  y.style.display = "none";
+}

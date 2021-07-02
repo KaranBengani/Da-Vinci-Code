@@ -14,5 +14,5 @@ body {
 body::before {
   content: "This website is not supported for small screen devices please open it on a Laptop/PC";
   text-align: center;
-  font-size: 600;
+  font-size: 20px;
 }
