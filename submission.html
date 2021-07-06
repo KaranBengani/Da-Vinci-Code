@@ -1,360 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://cdn.discordapp.com/attachments/852945305280577588/860064153283723264/footprint.png"
-      type="image/icon"
-    />
-    <title>Da Vinci Code</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      media="screen and (max-width:889px)"
-      href="./css/restrict.css"
-    />
-    <link
-      rel="stylesheet"
-      media="screen and (min-width: 990px)"
-      href="./css/subimission.css"
-    />
-  </head>
-  <body>
-    <div class="mainbody">
-      <div class="cov pt-5">
-        <form class="container" id="submission">
-          <div class="form-group">
-            <label for="inputname4">What is your name Detective?</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputname4"
-              placeholder="James Bond"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="inputEmail4"
-              >Where can we send you the case files?</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail4"
-              placeholder="jamesbond@007.com"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="inputname3">Your detective ID?</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputname3"
-              placeholder="RAXXXXXXXXXXXX"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="inputdept">Which agency are you from?</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputdept"
-              placeholder="CSE / ECE / EEE ....."
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="inputnumber">Where can we call you?</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="inputnumber"
-              placeholder="98xxxxxxx"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="inputyear">How experienced are you?</label>
-            <select id="inputyear" class="form-control" name="Year" required>
-              <option value="" selected>Year of study</option>
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year">3rd Year</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="inputSuspect">Who Murdered William?</label>
-            <select
-              id="inputSuspect"
-              class="form-control"
-              name="Suspects"
-              required
-            >
-              <option value="" selected>Suspect List</option>
-              <option value="Mrs. Misty Anderson">Mrs. Misty Anderson</option>
-              <option value="Mr. Bryan Anderson">Mr. Bryan Anderson</option>
-              <option value="Wilmort Anderson">Wilmort Anderson</option>
-              <option value="Mr. Kevin Anderson">Mr. Kevin Anderson</option>
-              <option value="Mr. Arnold Burns">Mr. Arnold Burns</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="justi"
-              >Why do you think the suspect mudered William?</label
-            >
-            <textarea
-              class="form-control"
-              id="justi"
-              rows="4"
-              placeholder="ABC was the murder because......"
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" class="gccbutton mx-auto">
-            <span class="noselect">Submit</span>
-            <div id="circle"></div>
-          </button>
-        </form>
-      </div>
-      <a onclick="visible6()">
-        <figure>
-          <img src="./assets/clip2.png" alt="" class="clipboard" />
-          <figcaption>REPORT</figcaption>
-        </figure>
-      </a>
-    </div>
-
-    <div id="report">
-      <button onclick="visible6()" type="button" class="closebutton">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <div class="report" id="reportcontent">
-        <h1>Report</h1>
-        <p>
-          Mr. William Anderson was a middle-aged wealthy businessman who took
-          over his mother’s business. Despite the fact that the business was
-          well established by his mother, his hard work and effort made the
-          business reach great heights due to which he was also a target for
-          many of his rival companies. For the last five years, after Mr.
-          Anderson was diagnosed with diabetes, high blood pressure and heart
-          ailment, he often depended on his younger brother and his personal
-          assistant for business related and official matters. His other family
-          members include his old father, wife and a 19-year-old son. <br />
-          On the night of 29 January 2021, dead body of Mr. William Anderson was
-          found lying on the staircase of his mansion. According to the forensic
-          report, the estimated time of death was around 9-10 PM and the cause
-          of death was cardiac arrest due to pacemaker failure. The prime
-          suspects of the murder are his family members- his father, son, wife,
-          younger brother and his personal assistant. <br />
-          You are appointed as the detective for this murder case and it’s your
-          job to find out who the actual murderer is. <br />
-        </p>
-        <h1 class="h11">Susupect List</h1>
-        <p>
-          <b>Wife (Mrs. Misty Anderson):</b> Mrs. Anderson, the businessman’s
-          wife was an independent woman. She was the daughter of the owner of
-          the businessman’s rival company. She used to help her husband with his
-          business at times.
-        </p>
-        <p>
-          <b>Father (Mr. Bryan Anderson):</b>
-          Mr. Bryan Anderson was the the victim’s step-dad. He always wanted his
-          own son (the victim’s younger brother) to take over the company which
-          set up by his wife. He thought his own son was more qualified and
-          hence more deserving that Mr. William Anderson.
-        </p>
-        <p>
-          <b>Son (Wilmort Anderson):</b>
-          Wilmort Anderson was a spoiled brat, drug addict, short-tempered and
-          spendthrift 19-year-old boy who did nothing other than wasting his
-          father’s money to support his extravagant lifestyle.
-        </p>
-        <p>
-          <b>P.A (Arnold Burns):</b>
-          Arnold Burns, the personal assistant of the businessman was a tech
-          geek. He had been working for him since the past five years and was
-          one of the trusted persons of the businessman and his family members.
-          Mr. Burns also used to take care of Mr. William Anderson’s medical
-          issues. He had a son who was suffering from an unusual disease called
-          neurofibromatosis and his son’s treatment required a large amount of
-          money which Mr. Anderson used provide him with.
-        </p>
-        <p>
-          <b>Younger brother (Kevin Anderson): </b>
-          Kevin Anderson was the victim’s step-brother. He was a highly
-          qualified, intelligent and had an MBA degree. Although he’s did not
-          share any ownership of the company, he used to advices and solutions
-          on business related problems and matters to his elder step- brother.
-        </p>
-        <h1>Susupect Statements</h1>
-        <div>
-          <h3>Wife</h3>
-          <p>
-            <b>Detective:</b> &nbsp Where were you around 9-10pm when the murder
-            happened?<br />
-            <br />
-            <b>Wife:</b> &nbsp It was dinner time and I was setting up the
-            dinner table. When I went to call the rest of my family members for
-            dinner, I saw William’s dead body lying on the staircase.
-            <br />
-            <br /><b>Detective:</b> &nbsp Who do you think killed your husband?
-            What could be the possible motives? <br /><br /><b>Wife:</b> &nbsp I
-            strongly believe my brother-in-law is involved with this murder. He
-            wanted the ownership of the company and he always thought himself to
-            be more intelligent, deserving and smart than my husband. My
-            brother-in-law was always jealous of him. Although my husband used
-            to depend on him a lot, they often got involved in nasty fights over
-            the future of our business.
-          </p>
-          <h3>Father</h3>
-          <p>
-            <b>Detective:</b> &nbsp According to the victim’s wife, your sons
-            lately got involved in fights over the future of your family
-            business. What do you have to say about that?
-            <br />
-            <br />
-            <b>Father:</b> &nbsp Yes, they often got involved in fights because
-            they had a lot of disagreements about the future of our family
-            business. I always wanted my own son to control the business. He is
-            intelligent, highly qualified and much smarter than William. I
-            believe he had greater capability to handle the business, but my
-            wife gave the company to my elder son and there was nothing that I
-            could do about it.
-            <br />
-            <br />
-            <b>Detective:</b> &nbsp Who do you think committed this gruesome
-            deed?
-            <br />
-            <br />
-            <b>Father:</b> &nbsp I am sure his wife committed this crime. She
-            belongs from a wealthy business family and we got them married
-            because we wanted to build a partnership deal with her father’s
-            company. Our relations were good and we wanted to strengthen our
-            bond with them. But six years back, due to growing differences
-            between the board members of the two companies, we were forced to
-            split up and now the two companies are rivals. Misty’s behaviour
-            changed a lot since then. She even tried to poison her own husband
-            twice but failed.
-          </p>
-          <h3>P.A</h3>
-          <p>
-            <b> Detective:</b> &nbsp How long have you been working for him?
-            <br />
-            <br />
-            <b>P.A :</b> &nbsp I have been working for Mr. Anderson for the past
-            five years. Mr. Anderson was a kind man and he loved me a lot. My
-            son has been suffering from an unusual disease and Mr. Anderson used
-            to help me with my son’s treatment. His death feels like a great
-            personal loss to me.
-            <br />
-            <br />
-            <b>Detective:</b> &nbsp Was everything going fine with the business?
-            <br />
-            <br />
-            <b>P.A :</b> &nbsp We always had trouble. Mr. William Anderson’s
-            step father used to interfere in the business dealings and he never
-            got along well with Mr. William. He often tried to instigate his own
-            son against his step-son. He wanted his own son to become the owner
-            of the company.
-          </p>
-          <h3>Younger Brother</h3>
-          <p>
-            <b> Detective:</b> &nbsp Everyone seems to target you; do you have
-            anything to say about it?
-            <br />
-            <br />
-            <b>Younger brother:</b> &nbsp What rubbish! I loved my brother very
-            much. Yes, I agree we got involved in fights lately but we always
-            resolved them in a peaceful manner. I always helped him in the
-            business and my brother used to consult me about various matters. We
-            had very good terms. How can I kill my brother?
-            <br />
-            <br />
-            <b>Detective:</b> &nbsp According to you, who might have killed your
-            brother?
-            <br />
-            <br />
-            <b>Younger brother:</b> &nbsp It’s definitely his son. My nephew is
-            a drug addict and his demands for money kept on increasing every
-            day. He never got along well with anyone in the family. He always
-            had disagreements with his father and they often use had arguments
-            and fights when my brother denied to pay him any extra money for his
-            extravagant life-style. My nephew is very greedy and he might have a
-            possible motive to kill my brother. He even used to have heated
-            arguments with Mr. Arnold Burns as he caught my nephew stealing
-            money from my brother’s cupboard several times.
-          </p>
-          <h3>Son</h3>
-          <p>
-            <b> Detective:</b> &nbsp How are you coping up in this difficult
-            time?
-            <br />
-            <br />
-            <b>Son:</b> &nbsp It’s a really difficult for me. I loved and
-            respected him a lot. Yes, we had our own share of fights and
-            disagreements. But now I feel I have let him down. I failed to lived
-            up to his expectations, I failed as a son. I never made him feel
-            proud.
-            <br />
-            <br />
-            <b>Detective:</b> &nbsp I am really sorry for your loss. So, tell me
-            Wilmort, did you notice anything suspicious about anyone lately in
-            the house?
-            <br />
-            <br />
-            <b>Son:</b> &nbsp That guy, my Dad’s PA, he is the culprit. He used
-            to get involved in our family matters. He even started to show more
-            concern about my Dad’s medical issues. He used to take him to the
-            doctor for monthly check-ups and also took care of his medicines
-            which I felt was a little unusual. My Dad was a kind man and he used
-            to give Arnold Burns a lot of money for his son’s treatment. But one
-            day I heard my dad shouting on him and I faintly remember him
-            telling Burns that he won’t give him any extra penny for his son’s
-            treatment. I even saw an email oh Burns’ laptop from our rival
-            company which made me suspicious. On questing him, he told me they
-            were making a deal to partner on a project together. That man is
-            very suspicious and he has amazing technical skills. I never liked
-            him getting involved in our family matters.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script> -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/sub.js"></script>
-  </body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible"content="IE=edge"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><link
+rel="icon"
+href="https://cdn.discordapp.com/attachments/852945305280577588/860064153283723264/footprint.png"
+type="image/icon"
+/><title>Da Vinci Code</title><link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+crossorigin="anonymous"
+/><link
+rel="stylesheet"
+media="screen and (max-width:889px)"
+href="./css/restrict.css"
+/><link
+rel="stylesheet"
+media="screen and (min-width: 990px)"
+href="./css/subimission.css"
+/></head><body><div class="mainbody"><div class="cov pt-5"><!--<div class="container finish mt-5"><h1>Thank you for participating!!</h1><p>Unfortunately,the Time is over and the murder has escaped!Better luck
+next time Detective<br />Fill out the feedback form given to you to
+avail your participation certificate and goodies!!</p></div>--><form class="container"id="submission"><div class="form-group"><label for="inputname4">What is your name Detective?</label><input
+type="text"
+class="form-control"
+id="inputname4"
+placeholder="James Bond"
+required
+/></div><div class="form-group"><label for="inputEmail4">Where can we send you the case files?</label><input
+type="email"
+class="form-control"
+id="inputEmail4"
+placeholder="jamesbond@007.com"
+required
+/></div><div class="form-group"><label for="inputname3">Your detective ID?</label><input
+type="text"
+class="form-control"
+id="inputname3"
+placeholder="RAXXXXXXXXXXXX"
+required
+/></div><div class="form-group"><label for="inputdept">Which agency are you from?</label><input
+type="text"
+class="form-control"
+id="inputdept"
+placeholder="CSE / ECE / EEE ....."
+required
+/></div><div class="form-group"><label for="inputnumber">Where can we call you?</label><input
+type="tel"
+class="form-control"
+id="inputnumber"
+placeholder="98xxxxxxx"
+required
+/></div><div class="form-group"><label for="inputyear">How experienced are you?</label><select id="inputyear"class="form-control"name="Year"required><option value=""selected>Year of study</option><option value="1st Year">1st Year</option><option value="2nd Year">2nd Year</option><option value="3rd Year">3rd Year</option></select></div><div class="form-group"><label for="inputSuspect">Who Murdered William?</label><select
+id="inputSuspect"
+class="form-control"
+name="Suspects"
+required><option value=""selected>Suspect List</option><option value="Mrs. Misty Anderson">Mrs.Misty Anderson</option><option value="Mr. Bryan Anderson">Mr.Bryan Anderson</option><option value="Wilmort Anderson">Wilmort Anderson</option><option value="Mr. Kevin Anderson">Mr.Kevin Anderson</option><option value="Mr. Arnold Burns">Mr.Arnold Burns</option></select></div><div class="form-group"><label for="justi">Why do you think the suspect mudered William?</label><textarea
+class="form-control"
+id="justi"
+rows="4"
+placeholder="ABC was the murder because......"
+required>
