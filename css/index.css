@@ -7,6 +7,14 @@
   --yellow: #fdfd96;
 }
 
+.loader {
+  position: absolute;
+  z-index: 10;
+}
+.section {
+  display: none;
+}
+
 body {
   background-color: var(--bg);
 }
