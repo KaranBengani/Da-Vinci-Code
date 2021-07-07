@@ -1,0 +1,739 @@
+@import url(https://fonts.googleapis.com/css2?family=Parisienne&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Marck+Script&display=swap);
+:root {
+  --bg: #0c0c0f;
+  --h1: #fff;
+  --yellow: #fdfd96;
+}
+.loader {
+  position: absolute;
+  z-index: 10;
+}
+.section {
+  display: none;
+}
+body {
+  background-color: var(--bg);
+}
+a:hover {
+  text-decoration: none !important;
+}
+.mansion {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+}
+.mansion > svg {
+  height: 100%;
+  width: 100%;
+}
+.mansion h1 {
+  padding-top: -1rem;
+  color: var(--h1);
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "Parisienne", cursive;
+  color: brown;
+  transform: translateY(40px);
+}
+#room {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(7px);
+}
+#room1,
+#room2,
+#room3,
+#room4,
+#room5,
+#report,
+#redirect {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+}
+.first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.imgcontent {
+  height: 95vh;
+  width: 60vw;
+  margin-top: 1%;
+  margin-left: 6%;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/859086068611809290/page3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.glass1 {
+  backdrop-filter: blur(4px);
+  margin: 0 auto;
+  width: 70%;
+  height: 48vh;
+  border: 0.2px solid;
+  padding: 30px;
+  border-radius: 16px;
+  margin-top: 6%;
+  color: white;
+}
+.opening1 {
+  text-align: center;
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.roomrid2 {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.glass {
+  backdrop-filter: blur(4px);
+  margin: 0 auto;
+  width: 70%;
+  height: 55vh;
+  border: 0.2px solid;
+  padding: 30px;
+  border-radius: 16px;
+  margin-top: 1%;
+}
+.opening {
+  text-align: center;
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.roomrid {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.braynglass {
+  height: 67vh !important;
+  width: 80%;
+  margin-top: 1% !important;
+  padding: 20px;
+}
+.bryan {
+  width: 97%;
+  text-align: left;
+  font-size: 17px;
+}
+.arnoldglass {
+  width: 70%;
+  margin-top: 4%;
+  height: 59vh;
+}
+.arnold {
+  width: 85%;
+  text-align: left;
+}
+.kevin {
+  text-align: left;
+}
+.willmot {
+  text-align: left;
+  width: 95%;
+}
+.parent1 {
+  display: none;
+  margin: 0 auto;
+  width: 90vw;
+  height: 87vh;
+  margin-top: 3.6%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/860543472560635919/kitchen_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.plate {
+  position: absolute;
+  transform: translate(445px, 269px);
+  cursor: pointer;
+}
+.parent11,
+.parent21,
+.parent31,
+.parent41,
+.parent51 {
+  color: white;
+  margin: 0 auto;
+  width: 79vw;
+  height: 75vh;
+  margin-top: 6%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/859022403144515625/adfs.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parent2 {
+  display: none;
+  margin: 0 auto;
+  width: 85vw;
+  height: 92vh;
+  margin-top: 2.2%;
+  margin-left: 10%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/860558431656476722/bed_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parent3 {
+  display: none;
+  margin: 0 auto;
+  width: 80vw;
+  height: 90vh;
+  margin-top: 2.9%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/860565842579423272/study_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parent4 {
+  display: none;
+  margin: 0 auto;
+  width: 80vw;
+  height: 87vh;
+  margin-top: 3.6%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/860574549292089344/store_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.brother {
+  z-index: 5;
+  position: absolute;
+  transform: translate(89px, 180px) scale(1.4);
+}
+.parent5 {
+  display: none;
+  margin: 0 auto;
+  width: 80vw;
+  height: 87vh;
+  margin-top: 3.6%;
+  vertical-align: middle;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/860587725287456788/living_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.report {
+  margin: 0 auto;
+  width: 70vw;
+  height: 85vh;
+  margin-top: 5%;
+  vertical-align: middle;
+  padding: 20px 140px;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/858024925741842462/report.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.report::-webkit-scrollbar {
+  display: none;
+}
+.report h1 {
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 60px;
+}
+.report h3 {
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 40px;
+}
+.report p {
+  font-family: "Marck Script", cursive;
+  font-size: 27px;
+}
+.red {
+  margin: 0 auto;
+  width: 70vw;
+  height: 80vh;
+  margin-top: 5%;
+  vertical-align: middle;
+  background-color: white;
+  background-image: url(https://cdn.discordapp.com/attachments/852945305280577588/858024925741842462/report.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.red h1 {
+  text-align: center;
+}
+.closebutton {
+  background-color: transparent;
+  color: var(--h1);
+  border: none;
+  right: 0;
+  top: 0;
+  position: fixed;
+  font-size: 40px;
+  cursor: pointer;
+}
+@keyframes blink {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--yellow);
+  }
+}
+.blink {
+  animation: blink 0.8s infinite alternate;
+}
+.modals {
+  z-index: 100;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+.modal1 {
+  margin: 0 auto;
+  width: 30vw;
+  height: 70vh;
+  margin-top: 6%;
+  vertical-align: middle;
+  background-color: white;
+  border-radius: 12px;
+}
+.closebuttonm {
+  background-color: transparent;
+  color: var(--bg);
+  border: none;
+  margin-left: 20px;
+  position: fixed;
+  font-size: 40px;
+  cursor: pointer;
+}
+#livingroomfin {
+  position: absolute;
+  bottom: 160px;
+  left: 660px;
+}
+h4 {
+  margin: 2rem 0rem;
+}
+.panel {
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 0.2rem;
+  background-color: #f5f5f5;
+  color: #323b40;
+}
+.panel.panel-blue {
+  background-color: #e0f5ff;
+  color: #00a5fa;
+}
+.panel.panel-big-height {
+  min-height: 150px;
+}
+.item {
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+.item.item-blue {
+  background-color: #b9e5fe;
+  color: #00a5fa;
+}
+.item.item-green {
+  background-color: #b7e0dc;
+  color: #019888;
+}
+.item.item-lime {
+  background-color: #c7e8c8;
+  color: #42b045;
+}
+.item.item-yellow {
+  background-color: #ffeeba;
+  color: #ff9901;
+}
+.item.item-pink {
+  background-color: #fabad0;
+  color: #ef075f;
+}
+.item.item-red {
+  background-color: #fec9c6;
+  color: #fd3d08;
+}
+.item.item-big-width {
+  min-width: 380px;
+}
+.clipboard {
+  transform: translateY(-210px);
+  height: auto;
+  width: 6vw;
+  margin-left: 4%;
+  cursor: pointer;
+}
+figcaption {
+  color: white;
+  transform: translateY(-209px);
+  margin-left: 5%;
+  text-decoration: none;
+}
+.cliphide {
+  display: none;
+}
+#pass,
+#pass1,
+#pass2,
+#pass3,
+#pass4,
+#pass5 {
+  width: 85%;
+  border-radius: 12px;
+}
+.h11,
+.h21,
+.h31,
+.h41,
+.h51 {
+  display: none;
+}
+.gccbutton {
+  background: #222;
+  height: 35px;
+  min-width: 100px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 18px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+.gccbutton #circle {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.gccbutton:hover {
+  background: transparent;
+}
+.gccbutton:hover #circle {
+  height: 35px;
+  width: 100px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+}
+.gccbuttonc {
+  background: #222;
+  height: 35px;
+  min-width: 145px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 18px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+.gccbuttonc #circlec {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+.noselectc {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.gccbuttonc:hover {
+  background: transparent;
+}
+.gccbuttonc:hover #circlec {
+  height: 35px;
+  width: 145px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+}
+
+#kitchenb,
+#studyb {
+  height: 7px;
+}
+#kitchenright,
+#kitchenleft {
+  width: 7px;
+}
+#bedup,
+#liveup {
+  height: 7px;
+}
+
+#bedright,
+#bedleft {
+  width: 7px;
+}
+#studyup {
+  height: 7px;
+}
+#studyright,
+#studyleft {
+  width: 7px;
+}
+#storeright {
+  height: 47.9vh;
+  width: 7px;
+  transform: translateY(-19px);
+}
+#storeup,
+#storeb {
+  height: 7px;
+}
+#liveb {
+  height: 7px;
+}
+#liveright,
+#liveleft {
+  width: 7px;
+}
+.closebutton2 {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+.convo1 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 55vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 23px;
+  font-family: "Marck Script", cursive;
+}
+.misty1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(59px, 225px);
+}
+.shoe {
+  position: absolute;
+  transform: translate(932px, 642px);
+  cursor: pointer;
+}
+.convo2 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 50vw;
+  margin-left: 6%;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: "Marck Script", cursive;
+}
+.father1 {
+  position: absolute;
+  z-index: 4;
+  height: 54vh;
+  width: auto;
+  transform: translate(850px, 270px);
+}
+.book {
+  position: absolute;
+  transform: translate(820px, 250px);
+  cursor: pointer;
+}
+.convo3 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 24px;
+  font-family: "Marck Script", cursive;
+}
+.pa1 {
+  position: absolute;
+  z-index: 4;
+  height: 58vh;
+  width: auto;
+  transform: translate(98px, 230px);
+}
+.lock {
+  position: absolute;
+  transform: translate(765px, 417px);
+  cursor: pointer;
+}
+.convo4 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 45vw;
+  margin-left: 28%;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: "Marck Script", cursive;
+}
+.bro1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(98px, 210px);
+}
+.photo {
+  position: absolute;
+  transform: translate(71px, 257px);
+  cursor: pointer;
+}
+.convo5 {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  width: 55vw;
+  margin-left: 4%;
+  margin-top: 0.5%;
+  font-size: 19.5px;
+  font-family: "Marck Script", cursive;
+}
+.son1 {
+  position: absolute;
+  z-index: 4;
+  height: 56vh;
+  width: auto;
+  transform: translate(910px, 225px);
+}
+.reddiv {
+  margin: 0 auto;
+  height: auto;
+  width: 50%;
+  padding-top: 5%;
+}
+.reddiv h1 {
+  font-family: "Parisienne", cursive;
+  font-weight: 900;
+  font-size: 100px;
+}
+.reddiv p {
+  font-family: "Marck Script", cursive;
+  font-weight: 700;
+  font-size: 25px;
+}
+.reddiv a {
+  margin-left: 35% !important;
+}
+.gccbuttong {
+  background: #222;
+  height: 37px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 18px;
+  font-family: "Cookie", cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+.gccbuttong #circleg {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+.noselectg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.gccbuttong:hover {
+  background: transparent;
+}
+.gccbuttong:hover #circleg {
+  height: 35px;
+  width: 170px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+  text-decoration: none;
+}
+.braynglass {
+  width: 85% !important;
+  margin-top: -2% !important;
+  height: 53vh;
+}
